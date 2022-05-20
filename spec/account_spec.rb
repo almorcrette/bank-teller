@@ -97,14 +97,14 @@ describe Account do
       it "prints 'DD/MM/YYYY || 3000.00 || || 3000.00' as statement following single 3000 deposit" do
         account.deposit(3000)
         expect { account.print_statement }.to output(
-          "3000.00 ||  || 3000.00"
+          %r{\d{2}/\d{2}/\d{4} || 3000.00 ||  || 3000.00}
         ).to_stdout
       end
 
       it "prints 'DD/MM/YYYY || 5000.00 || || 5000.00' as statement following single 3000 deposit" do
         account.deposit(5000)
         expect { account.print_statement }.to output(
-          "%r{\d{2}/\d{2}/\d{4}} || 5000.00 || || 5000.00"
+          %r{\d{2}/\d{2}/\d{4} || 5000.00 ||  || 5000.00}
         ).to_stdout
       end
     end

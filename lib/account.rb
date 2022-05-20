@@ -22,7 +22,7 @@ class Account
   def print_statement
     credit_two_decimals = sprintf("%.2f", transactions[0][:credit])
     balance_two_decimals = sprintf("%.2f", transactions[0][:balance])
-    print "#{credit_two_decimals} || #{transactions[0][:debit]} || #{balance_two_decimals}"
+    print "#{@transactions[0][:date]} || #{credit_two_decimals} || #{transactions[0][:debit]} || #{balance_two_decimals}"
   end
 
   private
