@@ -16,10 +16,15 @@ describe Account do
       end
     end
 
-    describe 'adds a credit transaction to the list of transactions' do
+    describe 'adds a dated credit transaction to the list of transactions' do
       it 'adds hash with credit key and 1000 value to transactions when 1000 is deposited' do
         account.deposit(1000)
         expect(account.transactions[0][:credit]).to eq(1000)
+      end
+
+      it 'adds hash with date key and a value of date formatted DD/MM/YYYY to transactions' do
+        account.deposit(1000)
+        expect(account.transactions[0][:date]).to match(%r{\d{2}/\d{2}/\d{4}})
       end
 
       it 'adds hash with credit key and 2000 value to transactions when 2000 is deposited' do
@@ -49,8 +54,6 @@ describe Account do
         account.withdraw(2000)
         expect(account.transactions[-1][:debit]).to eq(2000)
       end
-
-
     end
   end
 end
