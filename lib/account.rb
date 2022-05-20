@@ -23,6 +23,6 @@ class Account
 
   def log_transaction(transaction_type, amount)
     today = Time.now.strftime('%d/%m/%Y')
-    @transactions.push({ date: today, "#{transaction_type}": amount })
+    @transactions.push({ date: today, "#{transaction_type}": amount, balance: @balance })
   end
 end
