@@ -30,6 +30,10 @@ date || credit || debit || balance
 
 ### Dependencies
 
+For development and testing:
+* `rspec`
+* `rubocop`, `1.20`, using [Makers Academy Scaffolint linter file](https://github.com/makersacademy/scaffolint)
+
 ## Usage
 
 ### Getting started (installing the code)
