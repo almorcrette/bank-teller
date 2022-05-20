@@ -11,7 +11,7 @@ describe Account do
 
   describe '#deposit' do
     describe 'adds to the balance' do
-      it 'increases the balance by 1000 when 1000 is added' do
+      it 'increases the balance by 1000 when 1000 is deposited' do
         expect { account.deposit(1000) }.to change { account.balance }.from(0).to(1000)
       end
     end
