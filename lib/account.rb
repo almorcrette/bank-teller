@@ -11,11 +11,22 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions.push({ credit: amount })
+    log_transaction(:credit, amount)
   end
 
   def withdraw(amount)
     @balance -= amount
-    @transactions.push({ debit: amount })
+    log_transaction(:debit, amount)
+  end
+
+  private
+
+  def log_transaction(transaction_type, amount)
+    case transaction_type
+    when :credit
+      @transactions.push({ credit: amount })
+    when :debit
+      @transactions.push({ debit: amount })
+    end
   end
 end
