@@ -22,11 +22,7 @@ class Account
   private
 
   def log_transaction(transaction_type, amount)
-    case transaction_type
-    when :credit
-      @transactions.push({ date: Time.now.strftime("%d/%m/%Y"), credit: amount })
-    when :debit
-      @transactions.push({ date: Time.now.strftime("%d/%m/%Y"), debit: amount })
-    end
+    today = Time.now.strftime('%d/%m/%Y')
+    @transactions.push({ date: today, "#{transaction_type}": amount })
   end
 end
