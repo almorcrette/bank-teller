@@ -16,4 +16,13 @@ describe Account do
       end
     end
   end
+
+  describe '#withdraw' do
+    describe 'removes from the balance' do
+      it 'reduces the balance by 1000 when 1000 is withdrawn' do
+        account.deposit(1000)
+        expect { account.withdraw(1000) }.to change { account.balance }.from(1000).to(0)
+      end
+    end
+  end
 end
