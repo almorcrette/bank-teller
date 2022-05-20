@@ -15,6 +15,13 @@ describe Account do
         expect { account.deposit(1000) }.to change { account.balance }.from(0).to(1000)
       end
     end
+
+    describe 'adds a dated credit transaction to the list of transactions' do
+      it 'adds hash with credit key and 1000 value to transactions when 1000 is deposited' do
+        account.deposit(1000)
+        expect(account.transactions[0].credit).to eq(1000)
+      end
+    end
   end
 
   describe '#withdraw' do
