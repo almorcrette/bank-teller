@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # gem "rails"
 
 group :development, :test do
-  gem "rspec"
-  gem "rubocop", "1.20"
+  gem 'rspec'
+  gem 'rubocop', '1.20'
 end
-
-
