@@ -11,7 +11,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions.push({ credit: 1000 })
+    @transactions.push({ credit: amount })
   end
 
   def withdraw(amount)

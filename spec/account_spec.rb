@@ -21,6 +21,11 @@ describe Account do
         account.deposit(1000)
         expect(account.transactions[0][:credit]).to eq(1000)
       end
+
+      it 'adds hash with credit key and 2000 value to transactions when 2000 is deposited' do
+        account.deposit(2000)
+        expect(account.transactions[0][:credit]).to eq(2000)
+      end
     end
   end
 
