@@ -60,6 +60,13 @@ Principles I aim to follow for the design are:
 - You Ain't Gonna Need It (YAGNI): Do the simplest thing that could possibly work and avoid adding functionality until deemed necessary
 - Principle of least astonishment (POLA): A component of a system should behave in a way that most users will expect it to behave.
 
+### 3. Update the domain model
+
+Once I have implemented the `Account` class with `@balance` variable and `#deposit` and `#withdraw` methods, I realise that to store transaction date information I will need to expand my demain beyond my initial design to include a `@transactions` variable - an array that will receive transactions as hashes . Here is my updated design:
+
+![](assets/bank-teller-v2.excalidraw.png)
+
+
 
 
 
