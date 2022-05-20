@@ -39,10 +39,18 @@ describe Account do
 
     describe 'adds a debit transaction to the list of transactions' do
       it 'adds hash with debit key and 1000 value to transactions when 1000 is withdrawn' do
-        account.deposit(1000)
+        account.deposit(2000)
         account.withdraw(1000)
         expect(account.transactions[-1][:debit]).to eq(1000)
       end
+
+      it 'adds hash with debit key and 2000 value to transactions when 2000 is withdrawn' do
+        account.deposit(3000)
+        account.withdraw(2000)
+        expect(account.transactions[-1][:debit]).to eq(2000)
+      end
+
+
     end
   end
 end

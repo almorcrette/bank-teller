@@ -16,5 +16,6 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
+    @transactions.push({ debit: amount })
   end
 end
