@@ -22,11 +22,6 @@ describe Account do
         expect(account.transactions[0][:credit]).to eq(1000)
       end
 
-      it 'adds hash with date key and a value of date formatted DD/MM/YYYY to transactions' do
-        account.deposit(1000)
-        expect(account.transactions[0][:date]).to match(%r{\d{2}/\d{2}/\d{4}})
-      end
-
       it 'adds hash with credit key and 2000 value to transactions when 2000 is deposited' do
         account.deposit(2000)
         expect(account.transactions[0][:credit]).to eq(2000)
@@ -35,6 +30,11 @@ describe Account do
       it 'adds hash with date key and a value of date formatted DD/MM/YYYY to transactions' do
         account.deposit(1000)
         expect(account.transactions[0][:date]).to match(%r{\d{2}/\d{2}/\d{4}})
+      end
+
+      it 'adds hash with balance key and updated balance as value to transactions' do
+        account.deposit(1000)
+        expect(account.transactions[0][:balance]).to eq(1000)
       end
     end
   end
