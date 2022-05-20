@@ -16,7 +16,7 @@ describe Account do
       end
     end
 
-    describe 'adds a dated credit transaction to the list of transactions' do
+    describe 'adds a credit transaction to the list of transactions' do
       it 'adds hash with credit key and 1000 value to transactions when 1000 is deposited' do
         account.deposit(1000)
         expect(account.transactions[0][:credit]).to eq(1000)
@@ -34,6 +34,14 @@ describe Account do
       it 'reduces the balance by 1000 when 1000 is withdrawn' do
         account.deposit(1000)
         expect { account.withdraw(1000) }.to change { account.balance }.from(1000).to(0)
+      end
+    end
+
+    describe 'adds a debit transaction to the list of transactions' do
+      it 'adds hash with debit key and 1000 value to transactions when 1000 is withdrawn' do
+        account.deposit(1000)
+        account.withdraw(1000)
+        expect(account.transactions[-1][:debit]).to eq(1000)
       end
     end
   end
