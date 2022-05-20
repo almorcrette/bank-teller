@@ -23,7 +23,7 @@ class Account
     @transactions.each do |transaction|
       credit_two_decimals = sprintf("%.2f", transaction[:credit])
       balance_two_decimals = sprintf("%.2f", transaction[:balance])
-      print "#{transaction[:date]} || #{credit_two_decimals} || #{transaction[:debit]} || #{balance_two_decimals}"
+      print "#{transaction[:date]} || #{credit_two_decimals} || #{transaction[:debit]} || #{balance_two_decimals}\n"
     end
     
   end

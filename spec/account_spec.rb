@@ -112,7 +112,7 @@ describe Account do
         account.deposit(5000)
         account.deposit(2000)
         expect { account.print_statement }.to output(
-          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\d{2}\/\d{2}\/\d{4} \|\| 2000.00 \|\|  \|\| 7000.00/).to_stdout
+          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n\d{2}\/\d{2}\/\d{4} \|\| 2000.00 \|\|  \|\| 7000.00\n/).to_stdout
       end
     end
   end
