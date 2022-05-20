@@ -26,7 +26,7 @@ class Account
     when :credit
       @transactions.push({ date: Time.now.strftime("%d/%m/%Y"), credit: amount })
     when :debit
-      @transactions.push({ debit: amount })
+      @transactions.push({ date: Time.now.strftime("%d/%m/%Y"), debit: amount })
     end
   end
 end
