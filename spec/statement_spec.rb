@@ -7,7 +7,7 @@ describe Statement do
   describe '#log_transaction' do
     it 'adds the transaction to the transactions log' do
       statement.log_transaction(transaction)
-      expect { statement.transactions }.to include(transaction)
+      expect(statement.transactions).to include(transaction)
     end
   end
 end
