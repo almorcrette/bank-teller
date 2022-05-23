@@ -20,6 +20,7 @@ class Account
   end
 
   def print_statement
+    print "date || credit || debit || balance\n"
     @transactions.each do |transaction|
       credit_formatted = format_amount(transaction[:credit])
       debit_formatted = format_amount(transaction[:debit])
