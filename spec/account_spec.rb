@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# Next steps:
+# Transactions in reverse order
+# Header on print statement
+# Refactor
+# Consider extracting classes: e.g. transactions
+
 require './lib/account'
 
 describe Account do
@@ -108,11 +114,20 @@ describe Account do
         ).to_stdout
       end
 
-      it "prints each transaction on a separate line" do
+      it "prints multiple transactions each on a separate line" do
         account.deposit(5000)
         account.deposit(2000)
         expect { account.print_statement }.to output(
-          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n\d{2}\/\d{2}\/\d{4} \|\| 2000.00 \|\|  \|\| 7000.00\n/).to_stdout
+          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n\d{2}\/\d{2}\/\d{4} \|\| 2000.00 \|\|  \|\| 7000.00\n/
+        ).to_stdout
+      end
+
+      it "prints both credit and debit transactions" do
+        account.deposit(5000)
+        account.withdraw(2000)
+        expect { account.print_statement }.to output(
+          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n\d{2}\/\d{2}\/\d{4} \|\|  \|\| 2000.00 \|\| 3000.00\n/
+        ).to_stdout
       end
     end
   end
