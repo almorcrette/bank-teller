@@ -100,6 +100,11 @@ describe Account do
 
   describe '#print_statement' do
     describe 'prints transactions' do
+      it "prints a statement header 'date || credit || debit || balance'" do
+        expect { account.print_statement }.to output(
+          'date || credit || debit || balance'
+        ).to_stdout
+      end
       it "prints 'DD/MM/YYYY || 3000.00 || || 3000.00' as statement following single 3000 deposit" do
         account.deposit(3000)
         expect { account.print_statement }.to output(
