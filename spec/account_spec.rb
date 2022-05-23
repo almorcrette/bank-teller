@@ -36,6 +36,10 @@ describe Account do
       expect(statement).to receive(:log_transaction).with(transaction)
       account.deposit(1000)
     end
+
+    it 'raises an error if amount is negative' do
+      expect { account.deposit(-1000) }.to raise_error("positive amounts only")
+    end
   end
 
   describe '#withdraw' do
@@ -53,6 +57,10 @@ describe Account do
       expect(transaction_class).to receive(:create)
       expect(statement).to receive(:log_transaction).with(transaction)
       account.withdraw(1000)
+    end
+
+    it 'raises an error if amount is negative' do
+      expect { account.withdraw(-1000) }.to raise_error("positive amounts only")
     end
   end
 

@@ -19,11 +19,13 @@ class Account
   end
 
   def deposit(amount)
+    raise "positive amounts only" if amount < 0
     @balance += amount
     @statement.log_transaction(generate_transaction(:credit, amount))
   end
 
   def withdraw(amount)
+    raise "positive amounts only" if amount < 0
     @balance -= amount
     @statement.log_transaction(generate_transaction(:debit, amount))
   end
