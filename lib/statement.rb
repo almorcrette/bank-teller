@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Stores transactions and prints them
+# Stores transactions and display them
 class Statement
   attr_reader :transactions
 

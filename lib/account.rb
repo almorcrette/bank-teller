@@ -9,11 +9,13 @@ require_relative('./statement')
 class Account
   attr_reader :balance, :transactions
 
+  INITIAL_BALANCE = 0.00
+
   def initialize(
     transaction_class = Transaction,
     statement = Statement.new
   )
-    @balance = 0.00
+    @balance = INITIAL_BALANCE
     @statement = statement
     @transaction_class = transaction_class
   end
