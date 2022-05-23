@@ -13,7 +13,7 @@ describe Statement do
     end
   end
 
-  describe '#print_statement' do
+  describe '#print' do
     it "prints a statement header 'date || credit || debit || balance'" do
       expect { statement.print_statement }.to output(
         "date || credit || debit || balance\n"

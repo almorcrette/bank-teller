@@ -11,4 +11,8 @@ class Statement
   def log_transaction(transaction)
     @transactions << transaction
   end
+
+  def print_statement
+    print "date || credit || debit || balance\n"
+  end
 end
