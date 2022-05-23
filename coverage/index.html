@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-23T14:38:28+01:00">2022-05-23T14:38:28+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-23T14:47:48+01:00">2022-05-23T14:47:48+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.71
+         2.69
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>121</b> relevant lines,
-    <span class="green"><b>121</b> lines covered</span> and
+    <b>129</b> relevant lines,
+    <span class="green"><b>129</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -84,11 +84,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b4016eb715d215877cfe1de6d2be95c1cc98035c" class="src_link" title="lib/transaction.rb">lib/transaction.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.29</td>
+            <td class="cell--number">3.50</td>
             
           </tr>
         
@@ -106,9 +106,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b76f0ed8418b5f481aea97135afe02bd659090c0" class="src_link" title="spec/transaction_spec.rb">spec/transaction_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">32</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">42</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">24</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -715,8 +715,8 @@
     
 
     <div class="t-line-summary">
-      <b>7</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -756,18 +756,18 @@
 
             
 
-            <code class="ruby">  def self.create(balance:)</code>
+            <code class="ruby">  def self.create(type:, amount:, balance:)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="4">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="6" data-linenumber="4">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    Transaction.new(balance)</code>
+            <code class="ruby">    Transaction.new(type, amount, balance)</code>
           </li>
         </div>
       
@@ -800,7 +800,7 @@
 
             
 
-            <code class="ruby">  attr_reader :date, :balance</code>
+            <code class="ruby">  attr_reader :date, :balance, :credit</code>
           </li>
         </div>
       
@@ -822,13 +822,13 @@
 
             
 
-            <code class="ruby">  def initialize(balance)</code>
+            <code class="ruby">  def initialize(type, amount, balance)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="10">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="6" data-linenumber="10">
+            <span class="hits">6</span>
             
 
             
@@ -838,8 +838,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="11">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="6" data-linenumber="11">
+            <span class="hits">6</span>
             
 
             
@@ -849,13 +849,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
+          <li class="covered" data-hits="6" data-linenumber="12">
+            <span class="hits">6</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @credit = amount</code>
           </li>
         </div>
       
@@ -866,12 +866,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -2460,8 +2471,8 @@
     
 
     <div class="t-line-summary">
-      <b>17</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>24</b> relevant lines.
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2556,7 +2567,7 @@
 
             
 
-            <code class="ruby">        transaction = Transaction.create(balance: 1000)</code>
+            <code class="ruby">        transaction = Transaction.create(type: :credit, amount: 1000, balance: 1000)</code>
           </li>
         </div>
       
@@ -2622,7 +2633,7 @@
 
             
 
-            <code class="ruby">          transaction = Transaction.create(balance: 1000)</code>
+            <code class="ruby">          transaction = Transaction.create(type: :credit, amount: 1000, balance: 1000)</code>
           </li>
         </div>
       
@@ -2677,7 +2688,7 @@
 
             
 
-            <code class="ruby">          transaction = Transaction.create(balance: 2000)</code>
+            <code class="ruby">          transaction = Transaction.create(type: :credit, amount: 1000, balance: 2000)</code>
           </li>
         </div>
       
@@ -2732,7 +2743,7 @@
 
             
 
-            <code class="ruby">          transaction = Transaction.create(balance: 3000)</code>
+            <code class="ruby">          transaction = Transaction.create(type: :credit, amount: 1000, balance: 3000)</code>
           </li>
         </div>
       
@@ -2765,7 +2776,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2781,7 +2792,117 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      describe &#39;with an amount and a defined type (credit or debit&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="30">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        it &#39;passes 1000 as credit if arguments type: credit and amount: 1000&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          transaction = Transaction.create(type: :credit, amount: 1000, balance: 3000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          expect(transaction.credit).to eq(1000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        it &#39;passes 2000 as credit if arguments type: credit and amount: 2000&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          transaction = Transaction.create(type: :credit, amount: 2000, balance: 3000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          expect(transaction.credit).to eq(2000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -2792,7 +2913,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -2803,7 +2924,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -2814,7 +2935,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
