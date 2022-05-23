@@ -21,16 +21,11 @@ class Account
 
   def print_statement
     @transactions.each do |transaction|
-      unless !transaction[:credit]
-        credit_two_decimals = sprintf("%.2f", transaction[:credit])
-      end
-      unless !transaction[:debit]
-        debit_two_decimals = sprintf("%.2f", transaction[:debit])
-      end
-      balance_two_decimals = sprintf("%.2f", transaction[:balance])
-      print "#{transaction[:date]} || #{credit_two_decimals} || #{debit_two_decimals} || #{balance_two_decimals}\n"
+      credit_formatted = format_amount(transaction[:credit])
+      debit_formatted = format_amount(transaction[:debit])
+      balance_formatted = format_amount(transaction[:balance])
+      print "#{transaction[:date]} || #{credit_formatted} || #{debit_formatted} || #{balance_formatted}\n"
     end
-    
   end
 
   private
@@ -45,5 +40,9 @@ class Account
         balance: @balance
       }
     )
+  end
+
+  def format_amount(amount)
+    format('%.2f', amount) if amount
   end
 end
