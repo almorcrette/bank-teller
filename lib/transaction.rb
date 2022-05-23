@@ -12,11 +12,7 @@ class Transaction
   end
 
   def parse_transaction(type, amount)
-    if type == :credit
-      @credit = amount
-    else
-      @debit = amount
-    end
+    type == :credit ? @credit = amount : @debit = amount
     self
   end
 
