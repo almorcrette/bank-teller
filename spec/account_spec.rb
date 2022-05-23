@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 
-# Next steps:
-# Transactions in reverse order
-# Header on print statement
-# Refactor
-# Consider extracting classes: e.g. transactions
-
 require './lib/account'
 
 describe Account do
