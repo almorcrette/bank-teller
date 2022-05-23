@@ -13,7 +13,7 @@ class Statement
   end
 
   def display
-    print "date || credit || debit || balance\n"
+    display_header
     @transactions.reverse.each do |transaction|
       credit_formatted = format_amount(transaction.credit)
       debit_formatted = format_amount(transaction.debit)
@@ -26,5 +26,10 @@ class Statement
 
   def format_amount(amount)
     format('%.2f', amount) if amount
+  end
+
+  def display_header
+    print "date || credit || debit || balance\n"
+
   end
 end
