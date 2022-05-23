@@ -4,7 +4,13 @@ source 'https://rubygems.org'
 
 # gem "rails"
 
-group :development, :test do
+group :test do
   gem 'rspec'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
+
+group :development, :test do
   gem 'rubocop', '1.20'
 end
+
