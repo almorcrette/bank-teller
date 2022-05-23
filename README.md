@@ -121,6 +121,6 @@ Message the user can use to interact with the account:
 `rspec`
 
 ## Potential future extensions
-- Program allows an account to become overdrawn (amounts withdrawn exceed amounts deposited). It's not in the client requirements for this feature to be delivered, but this may be a future development that the client want.
+- Program allows an account to become overdrawn (amounts withdrawn exceed amounts deposited). I featur could be to restrict withdrawals to prevent this. It's not in the client requirements for this feature to be delivered, but this may be a future development that the client want.
 - Account does not accrue interest on deposits. This could be another feature to be delivered
 - An improved user interface could be developed, e.g. command line or GUI.
