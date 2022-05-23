@@ -199,16 +199,27 @@
       },
       "/Users/almorcrette/coding/projects/bank-teller/spec/statement_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
-          2,
+          3,
           2,
           null,
           1,
           1,
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -216,10 +227,14 @@
       },
       "/Users/almorcrette/coding/projects/bank-teller/lib/statement.rb": {
         "lines": [
+          null,
+          null,
+          null,
           1,
           1,
+          null,
           1,
-          1,
+          2,
           null,
           null,
           1,
@@ -230,10 +245,11 @@
       },
       "/Users/almorcrette/coding/projects/bank-teller/spec/transaction_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -281,28 +297,30 @@
       },
       "/Users/almorcrette/coding/projects/bank-teller/lib/transaction.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          7,
+          null,
+          null,
           1,
           null,
           1,
           7,
-          null,
-          null,
-          1,
-          null,
-          1,
-          7,
           7,
           null,
           null,
           1,
           7,
           7,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1653314957
+    "timestamp": 1653315217
   }
 }

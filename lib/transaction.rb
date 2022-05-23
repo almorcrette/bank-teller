@@ -1,5 +1,8 @@
-class Transaction
+# frozen_string_literal: true
 
+# Records transactions by
+# date, amount, type of transaction and balance after transaction
+class Transaction
   def self.create(type:, amount:, balance:)
     Transaction.new(balance).parse_transaction(type, amount)
   end
@@ -8,12 +11,11 @@ class Transaction
 
   def initialize(balance)
     @date = Time.now.strftime('%d/%m/%Y')
-    @balance = balance    
+    @balance = balance
   end
 
   def parse_transaction(type, amount)
     type == :credit ? @credit = amount : @debit = amount
     self
   end
-
 end

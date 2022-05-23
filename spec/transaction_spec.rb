@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require './lib/transaction'
 
 describe Transaction do
-  
   describe '::create' do
     describe 'initiates a new transaction instance' do
       it 'with a datestamp' do

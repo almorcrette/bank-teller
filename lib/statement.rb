@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
+# Stores transactions and prints them
 class Statement
   attr_reader :transactions
+
   def initialize
     @transactions = []
   end

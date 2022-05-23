@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/statement'
 
 describe Statement do
@@ -9,5 +11,14 @@ describe Statement do
       statement.log_transaction(transaction)
       expect(statement.transactions).to include(transaction)
     end
+  end
+
+  describe '#print_statement' do
+    it "prints a statement header 'date || credit || debit || balance'" do
+      expect { statement.print_statement }.to output(
+        "date || credit || debit || balance\n"
+      ).to_stdout
+    end
+
   end
 end
