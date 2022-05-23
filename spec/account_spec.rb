@@ -119,11 +119,11 @@ describe Account do
         ).to_stdout
       end
 
-      it "prints multiple transactions each on a separate line" do
+      it "prints multiple transactions each on separate lines most recent first" do
         account.deposit(5000)
         account.deposit(2000)
         expect { account.print_statement }.to output(
-          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n\d{2}\/\d{2}\/\d{4} \|\| 2000.00 \|\|  \|\| 7000.00\n/
+          /\d{2}\/\d{2}\/\d{4} \|\| 2000.00 \|\|  \|\| 7000.00\n\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n/
         ).to_stdout
       end
 
@@ -131,7 +131,7 @@ describe Account do
         account.deposit(5000)
         account.withdraw(2000)
         expect { account.print_statement }.to output(
-          /\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n\d{2}\/\d{2}\/\d{4} \|\|  \|\| 2000.00 \|\| 3000.00\n/
+          /\d{2}\/\d{2}\/\d{4} \|\|  \|\| 2000.00 \|\| 3000.00\n\d{2}\/\d{2}\/\d{4} \|\| 5000.00 \|\|  \|\| 5000.00\n/
         ).to_stdout
       end
     end
