@@ -36,6 +36,11 @@ describe Transaction do
           transaction = Transaction.create(type: :credit, amount: 2000, balance: 3000)
           expect(transaction.credit).to eq(2000)
         end
+
+        it 'passes 1000 as debit if arguments type: debit and amount: 1000' do
+          transaction = Transaction.create(type: :debit, amount: 1000, balance: 3000)
+          expect(transaction.debit).to eq(1000)
+        end
       end
     end
   end
