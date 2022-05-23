@@ -3,32 +3,31 @@
 require './lib/statement'
 
 describe Statement do
-
   let(:statement) { described_class.new }
 
-  let(:transaction) {
+  let(:transaction) do
     double :transaction,
-    date: "23/05/2022",
-    credit: 3000,
-    debit: nil,
-    balance: 3000
-  }
+           date: '23/05/2022',
+           credit: 3000,
+           debit: nil,
+           balance: 3000
+  end
 
-  let(:another_transaction) {
+  let(:another_transaction) do
     double :transaction,
-    date: "24/05/2022",
-    credit: 2000,
-    debit: nil,
-    balance: 5000
-  }
+           date: '24/05/2022',
+           credit: 2000,
+           debit: nil,
+           balance: 5000
+  end
 
-  let(:a_debit_transaction) {
+  let(:a_debit_transaction) do
     double :transaction,
-    date: "25/05/2022",
-    credit: nil,
-    debit: 1000,
-    balance: 2000
-  }
+           date: '25/05/2022',
+           credit: nil,
+           debit: 1000,
+           balance: 2000
+  end
 
   describe '#log_transaction' do
     it 'adds the transaction to the transactions log' do
@@ -39,7 +38,6 @@ describe Statement do
 
   describe '#display' do
     describe 'prints transactions' do
-
       it "including a statement header: 'date || credit || debit || balance'" do
         expect { statement.display }.to output(
           "date || credit || debit || balance\n"
@@ -76,9 +74,5 @@ describe Statement do
         ).to_stdout
       end
     end
- 
-
-
-
   end
 end

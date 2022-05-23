@@ -6,11 +6,11 @@
 require './lib/account'
 
 describe Account do
-
   let(:transaction) { double :transaction }
-  let(:transaction_class) {
+  let(:transaction_class) do
     double :transaction_class,
-    create: transaction }
+           create: transaction
+  end
   let(:statement) { double :statement }
   let(:account) { described_class.new(transaction_class, statement) }
 
@@ -19,7 +19,6 @@ describe Account do
   end
 
   describe '#deposit' do
-
     describe 'adds to the balance' do
       it 'e.g. increases the balance by 1000 when 1000 is deposited' do
         allow(statement).to receive(:log_transaction)
@@ -37,11 +36,9 @@ describe Account do
       expect(statement).to receive(:log_transaction).with(transaction)
       account.deposit(1000)
     end
-
   end
 
   describe '#withdraw' do
-
     describe 'removes from the balance' do
       it 'e.g. reduces the balance by 1000 when 1000 is withdrawn' do
         allow(statement).to receive(:log_transaction)
@@ -57,7 +54,6 @@ describe Account do
       expect(statement).to receive(:log_transaction).with(transaction)
       account.withdraw(1000)
     end
-
   end
 
   describe '#print_statement' do
@@ -66,5 +62,4 @@ describe Account do
       account.print_statement
     end
   end
-
 end

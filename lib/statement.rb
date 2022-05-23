@@ -22,10 +22,9 @@ class Statement
     end
   end
 
-  private 
+  private
 
   def format_amount(amount)
     format('%.2f', amount) if amount
   end
-
 end
