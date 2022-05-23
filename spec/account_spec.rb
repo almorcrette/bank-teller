@@ -160,5 +160,11 @@ describe Account do
   #   end
   # end
 
+  describe '#print_statement' do
+    it 'calls statement to display' do
+      expect(statement).to receive(:display)
+      account.print_statement
+    end
+  end
 
 end

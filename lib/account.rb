@@ -33,6 +33,7 @@ class Account
     @statement.display
   end
 
+
   # def print_statement
   #   print "date || credit || debit || balance\n"
   #   @transactions.reverse.each do |transaction|

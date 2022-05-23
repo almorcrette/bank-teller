@@ -12,7 +12,7 @@ class Statement
     @transactions << transaction
   end
 
-  def print_statement
+  def display
     print "date || credit || debit || balance\n"
     @transactions.reverse.each do |transaction|
       credit_formatted = format_amount(transaction.credit)
