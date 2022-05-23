@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-23T18:34:22+01:00">2022-05-23T18:34:22+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-23T18:45:13+01:00">2022-05-23T18:45:13+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.33
+         2.3
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>146</b> relevant lines,
-    <span class="green"><b>146</b> lines covered</span> and
+    <b>152</b> relevant lines,
+    <span class="green"><b>152</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -99,7 +99,7 @@
             <td class="cell--number">10</td>
             <td class="cell--number">10</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">4.00</td>
+            <td class="cell--number">4.40</td>
             
           </tr>
         
@@ -128,9 +128,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b76f0ed8418b5f481aea97135afe02bd659090c0" class="src_link" title="spec/transaction_spec.rb">spec/transaction_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">48</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">27</td>
+            <td class="cell--number">58</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">33</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -1166,8 +1166,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="13">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="8" data-linenumber="13">
+            <span class="hits">8</span>
             
 
             
@@ -1177,8 +1177,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="14">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="8" data-linenumber="14">
+            <span class="hits">8</span>
             
 
             
@@ -1221,8 +1221,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="18">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="8" data-linenumber="18">
+            <span class="hits">8</span>
             
 
             
@@ -1232,8 +1232,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="19">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="8" data-linenumber="19">
+            <span class="hits">8</span>
             
 
             
@@ -3006,8 +3006,8 @@
     
 
     <div class="t-line-summary">
-      <b>27</b> relevant lines.
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>33</b> relevant lines.
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3537,6 +3537,116 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="49">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;#parse_transaction&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &#39;allocates the amount to credit or debit based on type of transaction&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &#39;e.g. sets credit to 1000 if called with type: credit and amount: 1000&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        transaction = Transaction.new(0)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        transaction.parse_transaction(:credit, 1000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(transaction.credit).to eq(1000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 

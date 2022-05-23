@@ -4,7 +4,7 @@ Ruby bank teller program developed to practise doing a tech test. Developed duri
 
 ## Client requirements
 
-* Able to interact with doe via a REPL
+* Able to interact with code via a REPL
 * Deposits, withdrawals
 * Account statement (date, amount, balance) printing
 * Data can be kept in memory

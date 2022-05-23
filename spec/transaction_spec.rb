@@ -45,4 +45,14 @@ describe Transaction do
       end
     end
   end
+
+  describe '#parse_transaction' do
+    describe 'allocates the amount to credit or debit based on type of transaction' do
+      it 'e.g. sets credit to 1000 if called with type: credit and amount: 1000' do
+        transaction = Transaction.new(0)
+        transaction.parse_transaction(:credit, 1000)
+        expect(transaction.credit).to eq(1000)
+      end
+    end
+  end
 end
