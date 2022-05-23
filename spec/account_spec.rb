@@ -38,7 +38,7 @@ describe Account do
     end
 
     it 'raises an error if amount is negative' do
-      expect { account.deposit(-1000) }.to raise_error("positive amounts only")
+      expect { account.deposit(-1000) }.to raise_error('positive amounts only')
     end
   end
 
@@ -60,7 +60,7 @@ describe Account do
     end
 
     it 'raises an error if amount is negative' do
-      expect { account.withdraw(-1000) }.to raise_error("positive amounts only")
+      expect { account.withdraw(-1000) }.to raise_error('positive amounts only')
     end
   end
 
