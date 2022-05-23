@@ -84,9 +84,9 @@ The program is fronted by the `Account` class. The responsibility of this class 
 
 The `Account` class injects an instance of the `Statement` class on initiation, as well as the `Transaction` class.
 
-The responsibility of the `Transaction` class is to **record transactions* by date, amoubt, type of transaction (credit or debit) and the balance on the account after the transaction.
+The responsibility of the `Transaction` class is to **record transactions** by date, amoubt, type of transaction (credit or debit) and the balance on the account after the transaction.
 
-The responsibility of the `Statement` class is to store transactions and display them in an appropriate form.
+The responsibility of the `Statement` class is to **store transactions and display them in an appropriate format**.
 
 ### Dependencies
 
