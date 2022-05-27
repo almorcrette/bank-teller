@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# Next steps:
-# edge case negative amounts
-
 require './lib/account'
 
 describe Account do
