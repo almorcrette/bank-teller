@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-27T16:50:47+01:00">2022-05-27T16:50:47+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-27T17:06:33+01:00">2022-05-27T17:06:33+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1315,7 +1315,7 @@
 
             
 
-            <code class="ruby">    @date = Date.today.strftime(&#39;%d/%m/%Y&#39;)</code>
+            <code class="ruby">    @date = Time.now.strftime(&#39;%d/%m/%Y&#39;)</code>
           </li>
         </div>
       
@@ -3254,7 +3254,7 @@
 
             
 
-            <code class="ruby">        allow(Date).to receive(:today).and_return Date.new(2022, 5, 24)</code>
+            <code class="ruby">        allow(Time).to receive(:now).and_return Time.new(2022, 5, 24)</code>
           </li>
         </div>
       
