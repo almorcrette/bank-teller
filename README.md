@@ -79,15 +79,39 @@ At this point my production code passes the acceptance criteria. I refactor acco
 
 ![](assets/bank-teller-v3.excalidraw.png)
 
+### 5. Further improvements
+
+It's at this point that I submit to Makers coach fore feedback. [Checkout my commit at this stage here](https://github.com/almorcrette/bank-teller/commit/026404ad5b350949d94336906605bb76025095de).
+
+Following feedback, I make the following additional changes to improve the quality of my code further:
+- Adjust print statement format so that blank spaces have only one space between the `|`| characters;
+- Remove state tests in for `Account` class, and strengthen by behaviour tests to ensure full behaviour coverage
+- Tests dates using mocks in both the `Statement` tests and `Transaction` tests.
+- Test drive error raises in `Transaction#parse_transaction` method to prevent invalid type or amount
+
+### 6. Alternative object oriented design
+
+I am also told by the coach that he disagrees with that I have given my `Statement` class responsibility for storing transactions.
+
+I therefore also restructure the classes so that the account carries this responsibility.
+
+This alternative design can be found on the current branch.
+
+Here's the diagram for the alternative design:
+
+![](/assets/bank-teller-alternative-design.excalidraw.png)
+
 ## Code structure
 
-The program is fronted by the `Account` class. The responsibility of this class is to **track balance and handle deposit and withdrawals**. It also holds a statement and provides an option to print the statement, though the engineering of this functionality resides with the statement class.
+Note: this structure is for the alternative object oriented design. To see and read about the original design, see [the main branch code here](https://github.com/almorcrette/bank-teller).
 
-The `Account` class injects an instance of the `Statement` class on initiation, as well as the `Transaction` class.
+The program is fronted by the `Account` class. The responsibility of this class is to **handle and store transactions**. It also provides an print a statement.
+
+The `Account` class injects the `Statement` and `Transaction` classes.
 
 The responsibility of the `Transaction` class is to **record transactions** by date, amoubt, type of transaction (credit or debit) and the balance on the account after the transaction.
 
-The responsibility of the `Statement` class is to **store transactions and display them in an appropriate format**.
+The responsibility of the `Statement` class is to **display the account's transactions in an appropriate format**.
 
 ### Dependencies
 
