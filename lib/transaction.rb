@@ -15,7 +15,21 @@ class Transaction
   end
 
   def parse_transaction(type, amount)
+    raise 'type must be :credit or :debit' if type_not_valid?(type)
+
+    raise 'amount must be positive non-zero' if amount_not_valid?(amount)
+
     type == :credit ? @credit = amount : @debit = amount
     self
+  end
+
+  private
+
+  def type_not_valid?(type)
+    type != :credit && type != :debit
+  end
+
+  def amount_not_valid?(amount)
+    !amount || amount <= 0
   end
 end

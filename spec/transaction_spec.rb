@@ -54,6 +54,24 @@ describe Transaction do
         transaction.parse_transaction(:credit, 1000)
         expect(transaction.credit).to eq(1000)
       end
+
+      it 'raises an error if transaction type not debit or credit' do
+        transaction = Transaction.new(0)
+        expect { transaction.parse_transaction(:something_invalid, 1000) }
+          .to raise_error('type must be :credit or :debit')
+      end
+
+      it 'raises an error if transaction amount is nil' do
+        transaction = Transaction.new(0)
+        expect { transaction.parse_transaction(:debit, nil) }
+          .to raise_error('amount must be positive non-zero')
+      end
+
+      it 'raises an error if transaction amount is not positve non-zero' do
+        transaction = Transaction.new(0)
+        expect { transaction.parse_transaction(:debit, 0) }
+          .to raise_error('amount must be positive non-zero')
+      end
     end
   end
 end
