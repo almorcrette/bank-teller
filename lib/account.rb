@@ -13,32 +13,37 @@ class Account
 
   def initialize(
     transaction_class = Transaction,
-    statement = Statement.new
+    statement = Statement
   )
     @balance = INITIAL_BALANCE
     @statement = statement
     @transaction_class = transaction_class
+    @transactions = []
   end
 
   def deposit(amount)
     raise 'positive amounts only' if amount.negative?
 
     @balance += amount
-    @statement.log_transaction(generate_transaction(:credit, amount))
+    log_transaction(generate_transaction(:credit, amount))
   end
 
   def withdraw(amount)
     raise 'positive amounts only' if amount.negative?
 
     @balance -= amount
-    @statement.log_transaction(generate_transaction(:debit, amount))
+    log_transaction(generate_transaction(:debit, amount))
   end
 
   def print_statement
-    @statement.display
+    Statement.new(self).display
   end
 
   private
+
+  def log_transaction(transaction)
+    @transactions << transaction
+  end
 
   def generate_transaction(type, amount)
     @transaction_class.create(type: type, amount: amount, balance: @balance)

@@ -4,17 +4,13 @@
 class Statement
   attr_reader :transactions
 
-  def initialize
-    @transactions = []
-  end
-
-  def log_transaction(transaction)
-    @transactions << transaction
+  def initialize(account)
+    @account = account
   end
 
   def display
     display_header
-    @transactions.reverse.each do |transaction|
+    @account.transactions.reverse.each do |transaction|
       credit_formatted = format_amount(transaction.credit)
       debit_formatted = format_amount(transaction.debit)
       balance_formatted = format_balance(transaction.balance)
