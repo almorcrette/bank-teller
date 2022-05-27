@@ -107,7 +107,7 @@ Install dependencies: `bundle`
 
 ### Usage (executing the program)
 
-Use `irb` as follows:
+Use irb as follows:
 - Start up irb and load the necessary file: `irb -r './lib/account.rb'`
 - Create an account to use: `acc = Account.new`
 
