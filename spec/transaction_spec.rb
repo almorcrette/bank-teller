@@ -6,8 +6,9 @@ describe Transaction do
   describe '::create' do
     describe 'initiates a new transaction instance' do
       it 'with a datestamp' do
+        allow(Date).to receive(:today).and_return Date.new(2022, 5, 24)
         transaction = Transaction.create(type: :credit, amount: 1000, balance: 1000)
-        expect(transaction.date).to match(%r{\d{2}/\d{2}/\d{4}})
+        expect(transaction.date).to match('24/05/2022')
       end
 
       describe 'with balance data' do
