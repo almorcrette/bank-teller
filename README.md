@@ -29,7 +29,7 @@ date || credit || debit || balance
 
 Generated with `simple-cov`:
 
-![](assets/2022-05-23-code-coverage.png)
+![](assets/2022-05-27-code-coverage.png)
 
 ## Solution design approach
 
@@ -85,8 +85,8 @@ It's at this point that I submit to Makers coach fore feedback. [Checkout my com
 
 Following feedback, I make the following additional changes to improve the quality of my code further:
 - Adjust print statement format so that blank spaces have only one space between the `|`| characters;
-- Remove state tests in for `Account` class, and strengthen by behaviour tests to ensure full behaviour coverage
-- Tests dates using mocks in both the `Statement` tests and `Transaction` tests.
+- Remove state tests in for `Account` class, and strengthen the behaviour tests to ensure full behaviour coverage
+- Tests dates using mocks in both the `Statement` and `Transaction` suites.
 - Test drive error raises in `Transaction#parse_transaction` method to prevent invalid type or amount
 
 ### 6. Alternative object oriented design
