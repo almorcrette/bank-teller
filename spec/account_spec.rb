@@ -16,22 +16,16 @@ describe Account do
   end
 
   describe '#deposit' do
-    describe 'adds to the balance' do
-      it 'e.g. increases the balance by 1000 when 1000 is deposited' do
-        allow(statement).to receive(:log_transaction)
-        expect { account.deposit(1000) }.to change { account.balance }.from(0).to(1000)
-      end
-
-      it 'e.g. increases the balance by 2000 when 2000 is deposited' do
-        allow(statement).to receive(:log_transaction)
-        expect { account.deposit(2000) }.to change { account.balance }.from(0).to(2000)
-      end
-    end
-
-    it 'logs credit transaction in the statement' do
-      expect(transaction_class).to receive(:create)
+    it 'logs 1000 credit transaction with new balance of 1000 in the statement' do
+      expect(transaction_class).to receive(:create).with(type: :credit, balance: 1000, amount: 1000)
       expect(statement).to receive(:log_transaction).with(transaction)
       account.deposit(1000)
+    end
+
+    it 'logs 2000 credit transaction with new balance of 2000 in the statement' do
+      expect(transaction_class).to receive(:create).with(type: :credit, balance: 2000, amount: 2000)
+      expect(statement).to receive(:log_transaction).with(transaction)
+      account.deposit(2000)
     end
 
     it 'raises an error if amount is negative' do
@@ -40,18 +34,10 @@ describe Account do
   end
 
   describe '#withdraw' do
-    describe 'removes from the balance' do
-      it 'e.g. reduces the balance by 1000 when 1000 is withdrawn' do
-        allow(statement).to receive(:log_transaction)
-        account.deposit(1000)
-        expect { account.withdraw(1000) }.to change { account.balance }.from(1000).to(0)
-      end
-    end
-
-    it 'logs debit transaction in the statement' do
+    it 'logs 1000 debit transaction from an account with 1000 with new balance of 0 in the statement' do
       allow(statement).to receive(:log_transaction)
       account.deposit(1000)
-      expect(transaction_class).to receive(:create)
+      expect(transaction_class).to receive(:create).with(type: :debit, balance: 0, amount: 1000)
       expect(statement).to receive(:log_transaction).with(transaction)
       account.withdraw(1000)
     end
