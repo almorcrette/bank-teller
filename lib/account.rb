@@ -13,10 +13,10 @@ class Account
 
   def initialize(
     transaction_class = Transaction,
-    statement = Statement
+    statement_class = Statement
   )
     @balance = INITIAL_BALANCE
-    @statement = statement
+    @statement_class = statement_class
     @transaction_class = transaction_class
     @transactions = []
   end
@@ -36,7 +36,7 @@ class Account
   end
 
   def print_statement
-    Statement.new(self).display
+    @statement_class.new(self).display
   end
 
   private
