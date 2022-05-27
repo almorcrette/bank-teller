@@ -5,9 +5,6 @@
         "lines": [
           null,
           null,
-          null,
-          null,
-          null,
           1,
           null,
           1,
@@ -182,14 +179,22 @@
           1,
           null,
           1,
-          18,
+          12,
+          null,
+          null,
+          1,
+          6,
           null,
           null,
           1,
           5,
           null,
-          null,
           null
+        ]
+      },
+      "/Users/almorcrette/coding/projects/bank-teller/spec/feature_test_spec.rb": {
+        "lines": [
+
         ]
       },
       "/Users/almorcrette/coding/projects/bank-teller/spec/statement_spec.rb": {
@@ -337,6 +342,6 @@
         ]
       }
     },
-    "timestamp": 1653663076
+    "timestamp": 1653663638
   }
 }

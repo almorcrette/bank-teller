@@ -47,14 +47,14 @@ describe Statement do
       it "e.g. 'DD/MM/YYYY || 3000.00 || || 3000.00' as statement following single 3000 deposit" do
         statement.log_transaction(transaction)
         expect { statement.display }.to output(
-          %r{\d{2}/\d{2}/\d{4} \|\| 3000.00 \|\|  \|\| 3000.00}
+          %r{\d{2}/\d{2}/\d{4} \|\| 3000.00 \|\| \|\| 3000.00}
         ).to_stdout
       end
 
       it "e.g. 'DD/MM/YYYY || 5000.00 || || 5000.00' as statement following single 3000 deposit" do
         statement.log_transaction(another_transaction)
         expect { statement.display }.to output(
-          %r{\d{2}/\d{2}/\d{4} \|\| 2000.00 \|\|  \|\| 5000.00}
+          %r{\d{2}/\d{2}/\d{4} \|\| 2000.00 \|\| \|\| 5000.00}
         ).to_stdout
       end
 
@@ -62,7 +62,7 @@ describe Statement do
         statement.log_transaction(transaction)
         statement.log_transaction(another_transaction)
         expect { statement.display }.to output(
-          %r{\d{2}/\d{2}/\d{4} \|\| 2000.00 \|\|  \|\| 5000.00\n\d{2}/\d{2}/\d{4} \|\| 3000.00 \|\|  \|\| 3000.00\n}
+          %r{\d{2}/\d{2}/\d{4} \|\| 2000.00 \|\| \|\| 5000.00\n\d{2}/\d{2}/\d{4} \|\| 3000.00 \|\| \|\| 3000.00\n}
         ).to_stdout
       end
 
@@ -70,7 +70,7 @@ describe Statement do
         statement.log_transaction(transaction)
         statement.log_transaction(a_debit_transaction)
         expect { statement.display }.to output(
-          %r{\d{2}/\d{2}/\d{4} \|\|  \|\| 1000.00 \|\| 2000.00\n\d{2}/\d{2}/\d{4} \|\| 3000.00 \|\|  \|\| 3000.00\n}
+          %r{\d{2}/\d{2}/\d{4} \|\| \|\| 1000.00 \|\| 2000.00\n\d{2}/\d{2}/\d{4} \|\| 3000.00 \|\| \|\| 3000.00\n}
         ).to_stdout
       end
     end
