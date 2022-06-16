@@ -1,5 +1,2 @@
 # Local cache of Rubocop remote config
 .rubocop-*
-
-assets/*
-coverage/*
